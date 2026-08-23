@@ -1,0 +1,22 @@
+name: "Speaches (Kokoro)"
+description: "Speaches Server für Kokoro TTS via Wyoming-Protokoll"
+version: "1.0.4"
+slug: "speaches_local"
+init: false
+arch:
+  - aarch64
+  - amd64
+map:
+  - ssl:ro
+  - share:rw
+  - data:rw
+ports:
+  8000/tcp: 8000
+  10300/tcp: 10300
+ports_description:
+  8000/tcp: "Speaches OpenAI-compatible API (debugging only)"
+  10300/tcp: "Wyoming protocol — add this port in Home Assistant"
+startup: services
+boot: auto
+options: {}
+schema: {}
